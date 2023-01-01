@@ -13,11 +13,11 @@ function selectbar() {
 }
 
 let typeTranstoDiv = {
-  SeeMore: ".main > .MainTexts > .aboutReal",
+  SeeMore: ".main > .AboutMe",
 };
 
 function scrollF(type) {
   const DivRoot = typeTranstoDiv[type];
   const aboutQuery = document.querySelector(DivRoot);
-  window.scrollTo({ top: aboutQuery.offsetTop - 100, behavior: "smooth" });
+  window.scrollTo({ top: aboutQuery.offsetTop - 50, behavior: "smooth" });
 }

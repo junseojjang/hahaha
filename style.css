@@ -1,7 +1,11 @@
+/* 폰트 */
+
 @font-face {
   font-family: "Baemin";
   src: url("fonts/BMDOHYEON_ttf.ttf");
 }
+
+/* 전체 css */
 
 body,
 html {
@@ -9,6 +13,8 @@ html {
   padding: 0;
   font-family: "Baemin";
 }
+
+/* 나브바 */
 
 .nav {
   width: 100%;
@@ -65,4 +71,115 @@ html {
 
 .nav > .selectMenu > ul > li > a {
   text-decoration: none;
+}
+
+/* 메인 */
+/* 메인 */
+
+/* 첫페이지  */
+
+.main > .MainTexts {
+  margin: 100px 0px;
+  text-align: center;
+}
+
+.main > .MainTexts > .Hello {
+  font-size: 1.9em;
+  font-size: 30px;
+}
+
+.main > .MainTexts > .About {
+  /* font-size: 50px; */
+  font-size: 3em;
+}
+
+.main > .MainTexts > .Job {
+  /* font-size: 50px; */
+  font-size: 1.5em;
+  opacity: 0.6;
+  word-break: keep-all;
+}
+
+.main > .MainTexts > .ViewMore {
+  margin: 100px 0px;
+  color: black;
+  /* border: 2px solid greenyellow; */
+  background: greenyellow;
+  border-radius: 1000px;
+  cursor: pointer;
+  width: 200px;
+  height: 66px;
+  font-size: 20px;
+}
+
+.main > .MainTexts > .ViewMore:hover {
+  background-color: rgba(173, 255, 47, 0.6);
+}
+
+/* 어바웃미 */
+
+.main > .AboutMe > h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main > .AboutMe > .boxes {
+  width: 90%;
+  margin: auto;
+  /* background-color: greenyellow; */
+}
+
+.main > .AboutMe > .boxes > .box1 {
+  width: 49%;
+  background-color: white;
+  float: left;
+  text-align: center;
+  margin-right: 2%;
+  line-height: 200%;
+  margin-bottom: 40px;
+}
+
+.main > .AboutMe > .boxes > .box2 {
+  width: 49%;
+  background-color: white;
+  float: left;
+  text-align: center;
+  line-height: 200%;
+  margin-bottom: 40px;
+}
+
+.main > .AboutMe > .boxes > .box1 > a {
+  color: #0000ee;
+  text-decoration: none;
+}
+
+.main > .AboutMe > .boxes > .box2 > a {
+  color: #0000ee;
+  text-decoration: none;
+}
+
+.main > .AboutMe > .boxes > .box1 > i {
+  vertical-align: middle;
+}
+
+.main > .AboutMe > .boxes > .box2 > i {
+  vertical-align: middle;
+}
+
+@media (max-width: 670px) {
+  .main > .AboutMe > .boxes > .box1 {
+    float: none;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+  }
+
+  .main > .AboutMe > .boxes > .box2 {
+    float: none;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+  }
 }

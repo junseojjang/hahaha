@@ -11,3 +11,13 @@ function selectbar() {
     selectList.style.opacity = 0;
   }
 }
+
+let typeTranstoDiv = {
+  SeeMore: ".main > .MainTexts > .aboutReal",
+};
+
+function scrollF(type) {
+  const DivRoot = typeTranstoDiv[type];
+  const aboutQuery = document.querySelector(DivRoot);
+  window.scrollTo({ top: aboutQuery.offsetTop - 100, behavior: "smooth" });
+}

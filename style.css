@@ -1,7 +1,7 @@
 /* 폰트 */
 
 @font-face {
-  font-family: "Baemin";
+  font-family: "Bae";
   src: url("fonts/BMDOHYEON_ttf.ttf");
 }
 
@@ -11,7 +11,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "Baemin";
+  font-family: "Bae";
 }
 
 /* 나브바 */
@@ -191,8 +191,42 @@ html {
   margin-bottom: 40px;
 }
 
+.main > .Projects > .boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 670px) {
+  .main > .Projects > .boxes {
+    display: inline;
+  }
+}
+
 .main > .Projects > .boxes > #alh {
   background-image: url("img/alh.png");
+  border: 2px solid #ef372e;
+}
+
+.main > .Projects > .boxes > #djsHandler {
+  background-image: url("img/ashes.jpeg");
+  border: 2px solid #e3907e;
+}
+
+.main > .Projects > .boxes > #Youtube {
+  background-image: url("img/cheeseDuck.gif");
+  border: 2px solid #ffdf77;
+}
+
+.main > .Projects > .boxes > #alh > a {
+  color: #ef372e;
+}
+
+.main > .Projects > .boxes > #djsHandler > a {
+  color: #da5133;
+}
+
+.main > .Projects > .boxes > #Youtube > a {
+  color: #ffd54b;
 }
 
 .main > .Projects > .boxes > .box {
@@ -202,24 +236,29 @@ html {
   border-radius: 20px;
   margin-top: 30px;
   margin-bottom: 40px;
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-right: calc((100% - 900px) / 6);
+  margin-left: calc((100% - 900px) / 6);
   background-size: 100% 100%;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0);
   background-blend-mode: lighten;
-  border: 2px solid #ef372e;
+  box-sizing: border-box;
 }
 
 .main > .Projects > .boxes > .box > .projectTitle {
   padding-top: 20px;
   font-size: 25px;
+  text-shadow: 1px 1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff,
+    -1px -1px 1px #fff;
 }
 
 .main > .Projects > .boxes > .box > .projectDs {
-  margin-top: 27px;
+  margin-top: 21px;
   font-size: 19px;
   padding-left: 45px;
   text-align: left;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff,
+    -1px -1px 1px #fff;
 }
 
 .main > .Projects > .boxes > .box > a {
@@ -228,7 +267,6 @@ html {
   font-size: 45px;
   text-decoration: none;
   opacity: 0;
-  color: blue;
   /* text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
     0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa; */
   /* margin-bottom: ;
@@ -241,16 +279,219 @@ html {
 }
 
 .main > .Projects > .boxes > .box:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
   background-blend-mode: lighten;
 }
 
 .main > .Projects > .boxes > .box:hover a {
-  opacity: 2;
+  opacity: 1;
+}
+
+@media (max-width: 942px) {
+  .main > .Projects > .boxes > .box {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Discord Guilds */
+
+.main > .Guilds > h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 80px;
+}
+
+.main > .Guilds > .boxes {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 670px) {
-  .main > .Projects > .boxes > .box {
+  .main > .Guilds > .boxes {
+    display: inline;
+  }
+}
+
+.main > .Guilds > .boxes > #YoutubeDiscord {
+  background-image: url("img/jjanggoo.gif");
+  border: 2px solid #4c6dc2;
+}
+
+.main > .Guilds > .boxes > #AlhSupport {
+  background-image: url("img/alh.png");
+  border: 2px solid #ef372e;
+}
+
+.main > .Guilds > .boxes > #dhlwntiq {
+  background-image: url("img/SpongeBob.png");
+  border: 2px solid #d4e84d;
+}
+
+.main > .Guilds > .boxes > #YoutubeDiscord > a {
+  color: #4c6dc2;
+}
+
+.main > .Guilds > .boxes > #AlhSupport > a {
+  color: #ef372e;
+}
+
+.main > .Guilds > .boxes > #dhlwntiq > a {
+  color: #c4e200;
+}
+
+.main > .Guilds > .boxes > .box {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  margin-right: calc((100% - 900px) / 6);
+  margin-left: calc((100% - 900px) / 6);
+  background-size: 100% 100%;
+  background-color: rgba(255, 255, 255, 0);
+  background-blend-mode: lighten;
+  box-sizing: border-box;
+}
+
+.main > .Guilds > .boxes > .box > .projectTitle {
+  padding-top: 20px;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff,
+    -1px -1px 1px #fff;
+}
+
+.main > .Guilds > .boxes > .box > .projectDs {
+  margin-top: 21px;
+  font-size: 19px;
+  padding-left: 45px;
+  text-align: left;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff,
+    -1px -1px 1px #fff;
+}
+
+.main > .Guilds > .boxes > .box > a {
+  margin-top: 40px;
+  display: block;
+  font-size: 45px;
+  text-decoration: none;
+  opacity: 0;
+  /* text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa; */
+  /* margin-bottom: ;
+  margin-left: ;
+  margin-right: ; */
+}
+
+.main > .Guilds > .boxes > .box > a > i {
+  vertical-align: middle;
+}
+
+.main > .Guilds > .boxes > .box:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+}
+
+.main > .Guilds > .boxes > .box:hover a {
+  opacity: 1;
+}
+
+@media (max-width: 942px) {
+  .main > .Guilds > .boxes > .box {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Etc */
+.main > .Etc > h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 80px;
+}
+
+.main > .Etc > .boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 670px) {
+  .main > .Etc > .boxes {
+    display: inline;
+  }
+}
+
+.main > .Etc > .boxes > #Toss {
+  background-image: url("img/toss.png");
+  border: 2px solid #4c6dc2;
+}
+
+.main > .Etc > .boxes > #Toss > a {
+  color: #4c6dc2;
+}
+
+.main > .Etc > .boxes > .box {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  margin-right: calc((100% - 900px) / 6);
+  margin-left: calc((100% - 900px) / 6);
+  background-size: 100% 100%;
+  background-color: rgba(255, 255, 255, 0);
+  background-blend-mode: lighten;
+  box-sizing: border-box;
+}
+
+.main > .Etc > .boxes > .box > .projectTitle {
+  padding-top: 20px;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff,
+    -1px -1px 1px #fff;
+}
+
+.main > .Etc > .boxes > .box > .projectDs {
+  margin-top: 21px;
+  font-size: 19px;
+  padding-left: 45px;
+  text-align: left;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff,
+    -1px -1px 1px #fff;
+}
+
+.main > .Etc > .boxes > .box > a {
+  margin-top: 40px;
+  display: block;
+  font-size: 45px;
+  text-decoration: none;
+  opacity: 0;
+  /* text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+      0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa; */
+  /* margin-bottom: ;
+    margin-left: ;
+    margin-right: ; */
+}
+
+.main > .Etc > .boxes > .box > a > i {
+  vertical-align: middle;
+}
+
+.main > .Etc > .boxes > .box:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+}
+
+.main > .Etc > .boxes > .box:hover a {
+  opacity: 1;
+}
+
+@media (max-width: 942px) {
+  .main > .Etc > .boxes > .box {
     margin-left: auto;
     margin-right: auto;
   }

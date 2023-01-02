@@ -1,0 +1,110 @@
+/* 폰트 */
+
+@font-face {
+  font-family: "Bae";
+  src: url("/fonts/BMDOHYEON_ttf.ttf");
+}
+
+/* 전체 css */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Bae";
+}
+
+/* 나브바 */
+
+.nav {
+  width: 100%;
+  height: 70px;
+  background: #5dadec;
+}
+
+.nav > .main_text {
+  line-height: 70px;
+  float: left;
+  margin-left: 8%;
+  font-size: 24px;
+}
+
+.nav > .selectbar {
+  /* line-height: 70px; */
+  float: right;
+  margin-right: 5%;
+  font-size: 35px;
+  display: table;
+  margin: 12.5px 10%;
+}
+
+.nav > .selectbar:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.nav > .selectbar > i {
+  /* line-height: 70px; */
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.nav > .selectMenu {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  background: #1dc9f0;
+  visibility: hidden;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  opacity: 0;
+  /* display: none; */
+  /*  */
+}
+
+.nav > .selectMenu > ul {
+  list-style: none;
+}
+
+.nav > .selectMenu > ul > li:hover {
+  opacity: 0.8;
+}
+
+.nav > .selectMenu > ul > li > a {
+  text-decoration: none;
+}
+
+/* 메인 */
+/* 메인 */
+
+.main {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.main > .boxes {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.main > .boxes > .box > h2 {
+  font-size: 40px;
+}
+
+.main > .boxes > .box > iframe {
+  width: 800px;
+  height: 450px;
+}
+
+@media (max-width: 942px) {
+  .main > .boxes > .box > iframe {
+    width: 600px;
+    height: 337px;
+  }
+}
+
+@media (max-width: 677px) {
+  .main > .boxes > .box > iframe {
+    width: 400px;
+    height: 225px;
+  }
+}

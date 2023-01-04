@@ -19,5 +19,8 @@ let typeTranstoDiv = {
 function scrollF(type) {
   const DivRoot = typeTranstoDiv[type];
   const aboutQuery = document.querySelector(DivRoot);
-  window.scrollTo({ top: aboutQuery.offsetTop - 50, behavior: "smooth" });
+  window.scrollTo({
+    top: aboutQuery.offsetTop - 50,
+    behavior: "smooth",
+  });
 }

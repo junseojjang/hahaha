@@ -11,3 +11,7 @@ function selectbar() {
     selectList.style.opacity = 0;
   }
 }
+
+function goLink(link) {
+  window.open(link);
+}

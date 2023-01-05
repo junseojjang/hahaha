@@ -75,3 +75,47 @@ html {
 
 /* 메인 */
 /* 메인 */
+
+.main > .MainTexts {
+  margin: 100px 0;
+  text-align: center;
+}
+
+.main > .MainTexts > .Hello {
+  font-size: 1.9em;
+  font-size: 30px;
+}
+
+.main > .MainTexts > .About {
+  /* font-size: 50px; */
+  font-size: 3em;
+}
+
+.main > .MainTexts > .Job {
+  /* font-size: 50px; */
+  font-size: 1.5em;
+  opacity: 0.6;
+  word-break: keep-all;
+}
+
+/* .main > .MainTexts > img {
+  border-radius: 50%;
+} */
+
+.main > .MainTexts > .ViewMore {
+  color: black;
+  /* border: 2px solid greenyellow; */
+  background: #c1f700;
+  border-radius: 1000px;
+  cursor: pointer;
+  width: 200px;
+  height: 66px;
+  font-size: 20px;
+  margin-top: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.main > .MainTexts > .ViewMore:hover {
+  background-color: rgba(247, 206, 0, 0.6);
+}

@@ -15,3 +15,16 @@ function selectbar() {
 function goLink(link) {
   window.open(link);
 }
+
+let typeTranstoDiv = {
+  SeeMore: ".main > .Commands > hr",
+};
+
+function scrollF(type) {
+  const DivRoot = typeTranstoDiv[type];
+  const aboutQuery = document.querySelector(DivRoot);
+  window.scrollTo({
+    top: aboutQuery.offsetTop - 100,
+    behavior: "smooth",
+  });
+}

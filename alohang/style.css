@@ -78,6 +78,7 @@ html {
 
 .main > .MainTexts {
   margin: 100px 0;
+  margin-bottom: 250px;
   text-align: center;
 }
 
@@ -111,11 +112,126 @@ html {
   width: 200px;
   height: 66px;
   font-size: 20px;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: 5px;
   margin-right: 5px;
 }
 
 .main > .MainTexts > .ViewMore:hover {
   background-color: rgba(247, 206, 0, 0.6);
+}
+
+/* 어바웃 */
+.main > .AboutMe > h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main > .AboutMe > .boxes {
+  width: 90%;
+  margin: auto;
+  /* background-color: greenyellow; */
+}
+
+.main > .AboutMe > .boxes > .box1 {
+  width: 49%;
+  background-color: white;
+  float: left;
+  text-align: center;
+  margin-right: 2%;
+  line-height: 200%;
+  margin-bottom: 70px;
+}
+
+.main > .AboutMe > .boxes > .box2 {
+  width: 49%;
+  background-color: white;
+  float: left;
+  text-align: center;
+  line-height: 200%;
+  margin-bottom: 70px;
+}
+
+.main > .AboutMe > .boxes > .box1 > a {
+  color: #0000ee;
+  text-decoration: none;
+}
+
+.main > .AboutMe > .boxes > .box2 > a {
+  color: #0000ee;
+  text-decoration: none;
+}
+
+.main > .AboutMe > .boxes > .box1 > i {
+  vertical-align: middle;
+}
+
+.main > .AboutMe > .boxes > .box2 > i {
+  vertical-align: middle;
+}
+
+@media (max-width: 670px) {
+  .main > .AboutMe > .boxes > .box1 {
+    float: none;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+  }
+
+  .main > .AboutMe > .boxes > .box2 {
+    float: none;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 50px;
+  }
+}
+
+/* 커맨드스 */
+.main > .Commands > h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main > .Commands > .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main > .Commands > .boxes > .box {
+  width: 300px;
+  margin: 40px 40px;
+  margin-bottom: 35px;
+  border: 1px solid green;
+  border-radius: 10px;
+  text-align: left;
+  padding: 10px 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 21px;
+}
+
+.main > .Commands > .boxes > .box > .title {
+  font-size: 23px;
+  /* opacity: 0.75; */
+}
+
+.main > .Commands > .boxes > .box > .ds {
+  font-size: 17px;
+  opacity: 0.85;
+  word-break: keep-all;
+}
+
+.main > .Commands > .Title {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 30px;
+}
+
+@media (max-width: 670px) {
+  .main > .Commands > .boxes > .box {
+    width: 80%;
+  }
 }

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/simple-sidebar.css">
+  <link rel="icon" href="static/assets/img/dazzy.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
+    crossorigin="anonymous"></script>
+  <title>Discord text color changer</title>
+</head>
+<script>
+  function fire(uses) {
+    switch (uses) {
+      case 'success_copy':
+        Swal.fire({
+          title: '복사 완료',
+          text: "복사가 완료되었습니다.",
+          icon: 'success'
+        });
+        break;
+
+      case 'err_text':
+        Swal.fire({
+          title: '에러',
+          text: "변환하실 글자를 입력해 주세요 !",
+          icon: 'error'
+        });
+        break;
+
+      case "nocheck_checkbox":
+        Swal.fire({
+          title: "에러",
+          text: "변환할 색깔을 선택해 주세요",
+          icon: 'error'
+        })
+    }
+  }
+
+  let text22
+  function textset(text) {
+    text22 = text
+  }
+
+  function fix(text) {
+    let number = parseInt(text);
+    let list = {
+      "1": `\`\`\`diff\n- ${text22}\`\`\``,
+      "2": `\`\`\`css\n[${text22}]\`\`\``,
+      "3": `\`\`\`css\n[${text22}]\`\`\``,
+      "4": `\`\`\`css\n[${text22}]\`\`\``,
+      "5": `\`\`\`json\n"${text22}"\`\`\``,
+      "6": `\`\`\`diff\n+ ${text22}\`\`\``,
+      "7": `\`\`\`ini\n[${text22}]\`\`\``,
+      "8": `\`\`\`md\n# ${text22}\`\`\``,
+      "9": `\`\`\`diff\n- ${text22}\`\`\`\n\`\`\`css\n[${text22}]\`\`\`\n\`\`\`css\n[${text22}]\`\`\`\n\`\`\`css\n[${text22}]\`\`\`\n\`\`\`json\n"${text22}"\`\`\`\n\`\`\`diff\n+ ${text22}\`\`\`\n\`\`\`ini\n[${text22}]\`\`\`\n\`\`\`md\n# ${text22}\`\`\``
+    }
+    return list[number];
+  }
+
+  function copyToClipboard(color) {
+    let val;
+    switch (color) {
+      case 'red':
+        val = '1';
+        break;
+
+      case 'orange':
+        val = '2';
+        break;
+
+      case 'yellow':
+        val = '3';
+        break;
+
+      case 'dark_green':
+        val = '4';
+        break;
+
+      case 'dark_green2':
+        val = '5';
+        break;
+
+      case 'light_green':
+        val = '6';
+        break;
+
+      case 'blue':
+        val = '7';
+        break;
+
+      case 'blue2':
+        val = '8';
+        break;
+
+      case 'all':
+        val = '9';
+        break;
+    }
+
+    toCopy = fix(val)
+    var t = document.createElement("textarea");
+    document.body.appendChild(t);
+    t.value = toCopy;
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+    fire('success_copy');
+  }
+
+  function checkbutton(element) {
+    if (element.id == "copy_all") return console.log("리턴")
+    const checkboxes
+      = document.getElementsByName("checkboxf");
+
+    checkboxes.forEach((cb) => {
+      cb.checked = false;
+    })
+
+    element.checked = true;
+  }
+  function ch_all() {
+    let val;
+    switch ($('#copy_all').is(':checked')) {
+      case true:
+        val = true;
+        break;
+
+      case false:
+        val = false;
+        break;
+    }
+    $('#copy_red').prop('checked', val);
+    $('#copy_orange').prop('checked', val);
+    $('#copy_yellow').prop('checked', val);
+    $('#copy_dark_green1').prop('checked', val);
+    $('#copy_dark_green2').prop('checked', val);
+    $('#copy_light_green').prop('checked', val);
+    $('#copy_blue1').prop('checked', val);
+    $('#copy_blue2').prop('checked', val);
+  }
+
+  function submit() {
+    var count = 0;
+    let checkCount = 0
+    //선택된것 갯수 체크
+    var from = $('div.row > div.col-md-4 > label > input')
+    for (i = 0; i < from.length; i++) {
+      if (from[i].checked == true) {
+        checkCount++;
+      }
+    }
+    if (checkCount == 0) {
+      fire("nocheck_checkbox")
+    }
+
+    let rufrhk2 = $('#fffff');
+    if (rufrhk2.val().trim() === "") {
+      delete rufrhk2.val()
+      fire('err_text');
+      return
+    } else {
+      textset(rufrhk2.val());
+      if ($('#copy_red').is(':checked')) {
+        copyToClipboard('red');
+      }
+      if ($('#copy_orange').is(':checked')) {
+        copyToClipboard('orange');
+      }
+      if ($('#copy_yellow').is(':checked')) {
+        copyToClipboard('yellow');
+      }
+      if ($('#copy_dark_green1').is(':checked')) {
+        copyToClipboard('dark_green');
+      }
+      if ($('#copy_dark_green2').is(':checked')) {
+        copyToClipboard('dark_green2');
+      }
+      if ($('#copy_light_green').is(':checked')) {
+        copyToClipboard('light_green');
+      }
+      if ($('#copy_blue1').is(':checked')) {
+        copyToClipboard('blue');
+      }
+      if ($('#copy_blue2').is(':checked')) {
+        copyToClipboard('blue2');
+      }
+      if ($('#copy_all').is(':checked')) {
+        copyToClipboard('all');
+      }
+    }
+  }
+</script>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <h3 style="font-size: 1.5em; text-align: center;">Discord text color changer</h3>
+        <h5 style="font-size: 0.5em; text-align: center; margin-top: 1%;">Made by ! 대찌#4559</h5>
+      </nav>
+      <br>
+      <form name="form">
+        <div class="form-group">
+          <div class="card">
+            <div class="card-header">
+              변환하실 글자를 입력해 주세요.
+            </div>
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>변환할 글자</label>
+                    <input class="form-control" id="fffff" placeholder="변환할 글자" name="fffff">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="card">
+            <div class="card-header">복사할 색깔</div>
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <form name="chek">
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_red" name="checkboxf" onclick="checkbutton(this)">
+                        빨간색</label>
+                    </div>
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_orange" name="checkboxf" onclick="checkbutton(this)">
+                        주황색</label>
+                    </div>
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_yellow" name="checkboxf" onclick="checkbutton(this)">
+                        노란색</label>
+                    </div>
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_dark_green1" name="checkboxf" onclick="checkbutton(this)">
+                        어두운 초록색</label>
+                    </div>
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_dark_green2" name="checkboxf" onclick="checkbutton(this)">
+                        어두운 초록색 (2)</label>
+                    </div>
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_light_green" name="checkboxf" onclick="checkbutton(this)">
+                        밝은 초록색</label>
+                    </div>
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_blue1" name="checkboxf" onclick="checkbutton(this)">
+                        파란색</label>
+                    </div>
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_blue2" name="checkboxf" onclick="checkbutton(this)"> 파란색
+                        (2)</label>
+                    </div>
+                    <div class="col-md-4" style="padding-top : 5px;">
+                      <label><input type="checkbox" id="copy_all" onclick="checkbutton(this),ch_all();"
+                          name="checkboxf"> 전체 복사</label>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="col-md-12">
+        <button class="btn btn-primary col-md-12" onclick="submit();">확인</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<style>
+  /* 폰트 */
+
+  @font-face {
+    font-family: "Bae";
+    src: url("fonts/BMDOHYEON_ttf.ttf");
+  }
+
+  /* 전체 css */
+
+  body,
+  html {
+    font-family: "Bae";
+  }
+</style>
+
+</html>

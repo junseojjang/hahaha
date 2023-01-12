@@ -53,7 +53,7 @@ html {
   position: absolute;
   top: 70px;
   width: 100%;
-  background: #121722;
+  background: #f025f7;
   visibility: hidden;
   transition: visibility 0.5s, opacity 0.5s linear;
   opacity: 0;
